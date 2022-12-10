@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency-Tranfer</title>
+</head>
+<body>
+<table>
+    <tr style="font-weight: bolder">
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+    </tr>
+    <tr>
+        <th><input id="inputAmount" type="number"></th>
+        <th>
+            <select id="currency1">
+                <option value="VND" >VND</option>
+                <option value="USD" >USD</option>
+            </select>
+        </th>
+        <th>
+            <select id="currency2">
+                <option value="USD">USD</option>
+                <option value="VND">VND</option>
+            </select>
+        </th>
+        <th>
+            <button onclick="currencyChange()">Convert</button>
+        </th>
+
+    </tr>
+</table>
+<p id="printout"></p>
+<script>
+    function currencyChange() {
+        let moneyAmount = document.getElementById("inputAmount").value;
+        let money1 = document.getElementById("currency1").value;
+        let money2 = document.getElementById("currency2").value;
+        if (money1 =="VND" && money2 =="USD") {
+            document.getElementById("printout").innerHTML =+moneyAmount/23000;
+        } else if (money1 =="USD" && money2 =="VND") {
+            document.getElementById("printout").innerHTML =+moneyAmount*23000;
+        }
+    }
+
+</script>
+
+
+</body>
+</html>
